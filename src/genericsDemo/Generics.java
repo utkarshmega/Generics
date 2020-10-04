@@ -21,6 +21,14 @@ public class Generics {
 		
 		System.out.println(max);
 	}
+	public static void stringMax(String[] inputArray)
+	{
+		String max = inputArray[0];
+		for(String s: inputArray)
+			if(s.compareTo(max)>0)
+				max = s;
+		System.out.println(max);
+	}
 
 	public static void main(String[] args) {
 				
@@ -36,6 +44,12 @@ public class Generics {
 		floatMax(floatArray2);
 		Float floatArray3[] = {10.30f, 8.30f, 24.12f};
 		floatMax(floatArray3);
+		String stringArray1[] = {"Peach", "Apple", "Banana"};
+		stringMax(stringArray1);
+		String stringArray2[] = {"Apple", "Peach", "Banana"};
+		stringMax(stringArray2);
+		String stringArray3[] = {"Apple", "Banana", "peach"};
+		stringMax(stringArray3);
 	}
 
 }
