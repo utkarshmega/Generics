@@ -1,37 +1,37 @@
 package genericsDemo;
 
-public class Generics {
+public class Generics <T extends Comparable<T>> {
 	
-	public static <T extends Comparable<T>> void findMax(T[] inpArray)
+//	T a, b, c;
+//	public Generics(T a, T b, T c)
+//	{
+//		this.a = a;
+//		this.b = b;
+//		this.c = c;
+//	}
+//	public <T> void findMax() {
+//		return Generics.findMax(a, b, c);
+//	}
+	
+	public static <T extends Comparable<T>> void findMax(T a, T b, T c)
 	{
-		T max = inpArray[0];
-		for(T element: inpArray)
-		{
-			if(element.compareTo(max)>0)
-				max = element;
-		}
+		T max = a;
+		if(b.compareTo(max)>0)
+			max = b;
+		if(c.compareTo(max)>0)
+			max = c;
 		System.out.println(max);
 	}
 	public static void main(String[] args) {
 				
-		Integer intArray[] = {25, 10, 13};
-		findMax(intArray);
-		Integer intArray1[] = {25, 35, 13};
-		findMax(intArray1);
-		Integer intArray2[] = {25, 10, 50};
-		findMax(intArray2);
-		Float floatArray1[] = {10.30f, 8.30f, 4.12f};
-		findMax(floatArray1);
-		Float floatArray2[] = {10.30f, 18.30f, 4.12f};
-		findMax(floatArray2);
-		Float floatArray3[] = {10.30f, 8.30f, 24.12f};
-		findMax(floatArray3);
-		String stringArray1[] = {"Peach", "Apple", "Banana"};
-		findMax(stringArray1);
-		String stringArray2[] = {"Apple", "Peach", "Banana"};
-		findMax(stringArray2);
-		String stringArray3[] = {"Apple", "Banana", "Peach"};
-		findMax(stringArray3);
+
+		Integer int_a=25, int_b = 40, int_c = 30;
+		Generics.findMax(int_a, int_b, int_c);
+		Float float_a = 25.13f, float_b = 40.15f, float_c = 30.45f;
+		Generics.findMax(float_a, float_b, float_c);
+		String str_a = "Apple", str_b = "Peach", str_c = "Banana";
+		Generics.findMax(str_a, str_b, str_c);
+		
 	}
 
 }
