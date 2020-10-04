@@ -2,13 +2,13 @@ package genericsDemo;
 
 public class Generics <T extends Comparable<T>> {
 	
-//	T a, b, c;
-//	public Generics(T a, T b, T c)
-//	{
-//		this.a = a;
-//		this.b = b;
-//		this.c = c;
-//	}
+	T a, b, c;
+	public Generics(T a, T b, T c)
+	{
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
 //	public <T> void findMax() {
 //		return Generics.findMax(a, b, c);
 //	}
